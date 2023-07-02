@@ -1,0 +1,130 @@
+(1)
+#Write a python program to input three values and check whether it is an equilateral or not.
+x = int(input())
+y = int(input())
+z = int(input())
+if (x==y)and (x==z):
+  print("Equilateral Triangle")
+
+(2)
+# Write a Python program to read the range and display the numbers that are divisible by 3 and 5 within the range 
+st = int(input())
+en = int(input())
+for  i  in range(st,en+1):
+  if (i%3 == 0) and (i%5 == 0):
+    print(i)
+
+(3)
+# Write a Python program to print
+# A
+# B B 
+# C C C 
+# D D D D 
+# E E E E E
+s = "ABCDE"
+
+for i in range(len(s)):
+  for j in range(i+1):
+    print(s[i],end='')
+    if i == j:
+      break
+    print(" ",end="")
+  print('')
+
+(4)
+# Write a Python program to read the marks in five subjetcs (maximum mark 20 for each subject) and compute the percentage and grade 
+# Grade A >=90%
+# Grade B >=80%
+# Grade C >=70% 
+# Grade D >= 60%
+# Grade E <60%
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+e = int(input())
+t = (a+b+c+d+e)/100 *100
+m = int(t)
+s = str(m)
+if m >= 90:
+  print(s+'%')
+  print("A")
+elif m >= 80:
+  print(s+'%')
+  print("B")
+elif m >= 70:
+  print(s+'%')
+  print("C")
+elif m >= 60:
+  print(s+'%')
+  print("D")
+else:
+  print(s+'%')
+  print("E")
+
+(5)
+# Write a program using a while loop that asks the user for a number and prints a countdown from that number to zero 
+n = int(input())
+while n>= 0:
+  print(n)
+  n = n-1
+
+(6)
+# Write a Python program to print the prime numbers for a user provided range
+st = int(input())
+en = int(input())
+for i in range(st,en+1):
+  if i > 1:
+    for j in range(2,i):
+      if (i%j) == 0:
+        break
+    else:
+      print(i)
+
+(7)
+# Write a Python program to display the Fibonacci sequence for n terms
+n = int(input())
+f = 0
+s = 1
+t = 0
+print(f)
+print(s)
+for i in range(n-2):
+  t = f+s
+  f = s
+  s = t
+  print(t)
+
+(8)
+#The greatest common divisor of two positive integers, A and B, is the largest number that can be evenly divided into both of them. Euclid’s algorithm can be used to find the greatest common divisor(GCD) of two positive integers. You can use this algorithm in the following manner. a. Compare the remainder of dividing the largest number by the smallest number. b. Replace the largest number with the smallest number and the smaller number with the remainder c. Repeat this process until the smaller number is zero The larger number at this point is the GCD of A and B. Write a program that lets the user to enter two integers and then prints each step in the process of using the Euclid’s algorithm to find their GCD
+def gcd (x, y):  
+  if (y == 0): 
+    return x  
+  else:  
+    return gcd (y, x % y)  
+  
+a=int(input())
+b=int(input())
+print(gcd(a,b))
+
+(9)
+#Write a python program to read a number and print the binary of that number
+n = int(input())
+s = str(bin(n))
+print(s[2:])
+
+(10)
+# Given an empty chess board and one Bishop placed in any square, say (r,c) generate the list of all squares the Bishop could not move to 
+r = int(input())
+c = int(input())
+
+MAX = 64
+
+if c != 1:
+  print(r,c-1)
+if c != MAX:
+  print(r,c+1)
+if r != MAX:
+  print(r+1,c)
+if r != 1:
+  print(r-1,c)
